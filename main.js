@@ -131,7 +131,7 @@ adding_mass=get_adding_mass(S_get_mass,A_get_mass,F_get_mass)
 // rounding to 3 float
 adding_mass = Math.round(adding_mass * 1000) / 1000 
 adding_mass_label = document.getElementById('adding_mass') ;
-
+total_mass_label = document.getElementById('total_mass') ;
 
 if (adding_mass<=0){
     adding_mass_label.innerText = "Հնարավոր չի ստանալ";
@@ -139,7 +139,7 @@ if (adding_mass<=0){
 }
 else if (adding_mass){
     adding_mass_label.innerText ="Ավելացնել " + adding_mass.toString()+" կգ";
-
+    total_mass_label.innerText ="Ընդհանուր " + (adding_mass+start_mass_get_adding_mass).toString()+" կգ";
 }
 
 else{
