@@ -21,7 +21,7 @@ function getCount(parent, getChildrensChildren){
     count_material_final_percentage = ((getCount(get_adding_mass,false)-10)/7)+1 //number of added sections   
 
     div = document.createElement("div");
-    div.classList.add('ui', 'right', 'big', 'input')
+    div.classList.add('ui', 'right', 'large', 'input')
     div.setAttribute("id", "metal_"+count_material_final_percentage);
 
     div.innerHTML = `<input type="text" id="metal_name_get_percentage" placeholder="Մետաղ..."></input>`
