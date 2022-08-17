@@ -24,7 +24,7 @@ function getCount(parent, getChildrensChildren){
     div.classList.add('ui', 'right', 'large', 'input')
     div.setAttribute("id", "metal_"+count_material_final_percentage);
 
-    div.innerHTML = `<input type="text" id="metal_name_get_percentage" placeholder="Մետաղ..."></input>`
+    div.innerHTML = `<input type="text" id="metal_name_get_percentage" placeholder="Metal"></input>`
     get_adding_mass?.appendChild(div);
 
 
@@ -35,10 +35,10 @@ function getCount(parent, getChildrensChildren){
     input2 = document.createElement("input");
     input2.setAttribute("id", "material_start_percentage_"+count_material_final_percentage);
     input2.setAttribute("type", "text");
-    input2.setAttribute("placeholder", "Սկզբնական...");
+    input2.setAttribute("placeholder", "Start");
     div2.appendChild(input2)
     
-    div2.innerHTML += `<div class="ui basic label">Սկզբնական %</div>`
+    div2.innerHTML += `<div class="ui basic label">Start %</div>`
     get_adding_mass?.appendChild(div2);
 
 
@@ -51,10 +51,10 @@ function getCount(parent, getChildrensChildren){
     input3 = document.createElement("input");
     input3.setAttribute("id", "material_adding_percentage_"+count_material_final_percentage);
     input3.setAttribute("type", "text");
-    input3.setAttribute("placeholder", "Ավելացվող...");
+    input3.setAttribute("placeholder", "Adding");
     div3.appendChild(input3)
     
-    div3.innerHTML += `<div class="ui basic label">Ավելացվող %</div>`
+    div3.innerHTML += `<div class="ui basic label">Adding %</div>`
     get_adding_mass?.appendChild(div3);
 
 
@@ -134,16 +134,16 @@ adding_mass_label = document.getElementById('adding_mass') ;
 total_mass_label = document.getElementById('total_mass') ;
 
 if (adding_mass<=0){
-    adding_mass_label.innerText = "Հնարավոր չի ստանալ";
+    adding_mass_label.innerText = "Error, please check fields again";
 
 }
 else if (adding_mass){
-    adding_mass_label.innerText ="Ավելացնել " + adding_mass.toString()+" կգ";
-    total_mass_label.innerText ="Ընդհանուր " + (adding_mass+start_mass_get_adding_mass).toString()+" կգ";
+    adding_mass_label.innerText ="Need to add " + adding_mass.toString()+" kg";
+    total_mass_label.innerText ="Final mass will be" + (adding_mass+start_mass_get_adding_mass).toString()+" kg";
 }
 
 else{
-    adding_mass_label.innerText = "Սխալ տվյալներ";
+    adding_mass_label.innerText = "Wrong data, please check again";
 
 }
 
@@ -172,16 +172,16 @@ for (const x of Array(count_material_final_percentage).keys()) {
     material_final_percentage_label = document.getElementById('material_final_percentage_'+(x+1))
 
     if (final_percentage<=0){
-        material_final_percentage_label.innerText = "Հնարավոր չի ստանալ";
+        material_final_percentage_label.innerText = "Error, please check fields again";
     
     }
     else if (final_percentage){
-        material_final_percentage_label.innerText = "Կդառնա " + final_percentage.toString()+" %";
+        material_final_percentage_label.innerText = "Final " + final_percentage.toString()+" %";
     
     }
     
     else{
-        material_final_percentage_label.innerText = "Սխալ տվյալներ";
+        material_final_percentage_label.innerText = "Wrong data, please check again";
     
     }
 
